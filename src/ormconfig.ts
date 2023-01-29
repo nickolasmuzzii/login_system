@@ -1,13 +1,15 @@
 import { DataSource } from "typeorm"
+import * as dotenv from "dotenv"
 
+dotenv.config()
 export const connectionSource = new DataSource({
     migrationsTableName: 'migrations',
     type: 'mysql',
-    host: '127.0.0.1',
+    host: process.env.DB_HOST,
     port: 3306,
-    username: 'root',
-    password: '',
-    database: 'login_system',
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     logging: false,
     synchronize: false,
     name: 'default',

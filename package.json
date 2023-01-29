@@ -35,6 +35,7 @@
     "create-require": "^1.1.1",
     "debug": "^3.2.7",
     "diff": "^4.0.2",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "fill-range": "^7.0.1",
     "glob-parent": "^5.1.2",
