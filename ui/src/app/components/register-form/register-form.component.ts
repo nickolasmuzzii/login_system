@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterFormComponent  implements OnInit {
   registerForm!: FormGroup;
+  device = false
   constructor(private formbuilder: FormBuilder, private http: HttpClient){
   }
   ngOnInit(): void {
@@ -26,6 +27,10 @@ export class RegisterFormComponent  implements OnInit {
         estado:[''],
         cidade:[''],
       });
+    if(window.innerWidth <= 768){
+      console.log("ok")
+      this.device = true
+    }
     }
 
   onSubmit(){
@@ -53,7 +58,6 @@ export class RegisterFormComponent  implements OnInit {
         }
     }
   this.http.post('http://localhost:3000/user', sendData).subscribe(response => {
-    console.log(response);
     return response
   });
 
