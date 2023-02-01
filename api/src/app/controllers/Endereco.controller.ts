@@ -14,5 +14,6 @@ class EnderecoController {
     }
     return response.status(422);
   }
+
 }
 export default new EnderecoController();

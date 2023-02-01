@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="title">
+        <h1>Seja bem vindo!</h1>
+        <h3>Estas são suas informações cadastrais</h3>
+    </div>
+    <div class="infos" *ngIf="data">
+        <div class="grid-item">
+            Nome: {{data["user"].nome}}
+        </div>
+        <div class="grid-item">
+            E-mail: {{data["user"].email}}
+        </div>
+        <div class="grid-item">
+            Nascimento: {{data["user"].data_nascimento}}
+        </div>
+        <div class="grid-item">
+            Cep: {{data["endereco"].cep}}
+        </div>
+        <div class="grid-item">
+            Rua: {{data["endereco"].rua}}
+        </div>
+        <div class="grid-item">
+            Cidade: {{data["endereco"].cidade}}
+        </div>
+        <div class="grid-item">
+            Estado: {{data["endereco"].estado}}
+        </div>
+    </div>
+</div>

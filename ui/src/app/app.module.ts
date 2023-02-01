@@ -16,13 +16,14 @@ import {
   provideNgxMask,
 } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
+import { PersonalInfosComponent } from './components/personal-infos/personal-infos.component';
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
     validation: false,
   };
 };
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterFormComponent],
+  declarations: [AppComponent, LoginComponent, RegisterFormComponent, PersonalInfosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -17,7 +17,7 @@
     <div class="form-container">
       <h2>Login</h2>
 
-      <form class="form">
+      <form class="form" [formGroup]="loginForm" (submit)="onSubmit()">
         <div class="grid-item">
           <label for="email">Email*:</label>
           <input id="email" type="email" matInput formControlName="email" />
@@ -25,8 +25,8 @@
             class="validations"
             *ngIf="loginForm.controls['email'].errors && loginForm?.touched"
           >
-            <div>Campo Obrigatório!</div>
-            <div>Favor inserir um email valido.</div>
+            <div *ngIf="loginForm.controls['email'].errors['required']">Campo Obrigatório!</div>
+            <div  *ngIf="loginForm.controls['email'].errors['email']">Favor inserir um email valido.</div>
           </div>
           <div class="grid-item">
             <label for="password">Senha*:</label>
@@ -39,12 +39,15 @@
             <div
               class="validations"
               *ngIf="
-                loginForm.controls['password'].errors && loginForm?.touched
-              "
+              loginForm.controls['password'].errors && loginForm?.touched
+            "
             >
               Campo Obrigatório!
             </div>
           </div>
+        </div>
+        <div class="button-submit" style="grid-column: span 2">
+          <input mat-button type="submit" value="Cadastrar" />
         </div>
       </form>
     </div>

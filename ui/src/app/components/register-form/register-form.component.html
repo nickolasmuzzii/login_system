@@ -5,8 +5,8 @@
       <h1>Seja bem vindo !</h1>
       <h3>
         Caso já possua cadastro, clique no botão a seguir para realizar seu
-        login.<p *ngIf="device">Caso não tenha, realize-o no formulário abaixo</p>
-
+        login.
+        <p *ngIf="device">Caso não tenha, realize-o no formulário abaixo</p>
       </h3>
       <a
         mat-stroked-button
@@ -70,12 +70,15 @@
           <div
             class="validations"
             *ngIf="
-              registerForm.controls['data_nascimento'].errors && registerForm?.touched
+              registerForm.controls['data_nascimento'].errors &&
+              registerForm?.touched
             "
           >
             <div
               class="required"
-              *ngIf="registerForm.controls['data_nascimento'].errors['required']"
+              *ngIf="
+                registerForm.controls['data_nascimento'].errors['required']
+              "
             >
               Campo Obrigatório!
             </div>
@@ -89,20 +92,38 @@
             type="text"
             matInput
             formControlName="cep"
+            (change)="searchCep($event)"
           />
         </div>
-
         <div class="grid-item">
           <label for="estado">Estado:</label>
-          <input id="estado" type="text" matInput formControlName="estado" />
+          <input
+            id="estado"
+            type="text"
+            matInput
+            formControlName="estado"
+            [(ngModel)]="endereco_viacep.uf"
+          />
         </div>
         <div class="grid-item">
           <label for="cidade">Cidade:</label>
-          <input id="cidade" type="text" matInput formControlName="cidade" />
+          <input
+            id="cidade"
+            type="text"
+            matInput
+            formControlName="cidade"
+            [(ngModel)]="endereco_viacep.localidade"
+          />
         </div>
         <div class="grid-item" style="grid-column: span 2">
           <label for="rua">Rua:</label>
-          <input id="rua" type="text" matInput formControlName="rua" />
+          <input
+            id="rua"
+            type="text"
+            matInput
+            formControlName="rua"
+            [(ngModel)]="endereco_viacep.logradouro"
+          />
         </div>
         <div class="grid-item">
           <label for="password">Senha*:</label>
@@ -137,7 +158,8 @@
           <div
             class="validations"
             *ngIf="
-              registerForm.controls['confirm_senha'].errors && registerForm?.touched
+              registerForm.controls['confirm_senha'].errors &&
+              registerForm?.touched
             "
           >
             <div

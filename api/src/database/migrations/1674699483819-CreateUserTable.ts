@@ -16,7 +16,6 @@ export class CreateUserTable1674699483819 implements MigrationInterface {
           {
             name: "nome",
             type: "varchar",
-            isUnique: true,
             isNullable: false,
           },
           {
@@ -34,7 +33,6 @@ export class CreateUserTable1674699483819 implements MigrationInterface {
             name: "password",
             type: "varchar",
             isNullable: false,
-            isUnique: true,
           },
           {
             name: "endereco_id",
