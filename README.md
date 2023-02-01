@@ -26,23 +26,17 @@
 - Pode aplicar a responsividade utilizando flex-layout ou bootstrap, caso tenha conhecimento sobre.
 
 ### Para rodar
-Entrar na pasta ui -> npm install
--=-=-=-=-=---=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-
-para rodar o front end -> ng s
--=-=-=-=-=---=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-
-criar um database em mysql
--=-=-=-=-=---=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-
-colocar no .env os dados do seu database
--=-=-=-=-=---=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-
-Na pasta api rodar o seguinte comando -> yarn  typeorm migration:run --dataSource src/ormconfig.ts
--=-=-=-=-=---=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-
-para rodar o backend -> npm run dev
+- Entrar na pasta ui -> npm install
+- para rodar o front end -> ng s
+- criar um database em mysql
+- colocar no .env os dados do seu database
+- Na pasta api rodar o seguinte comando -> yarn  typeorm migration:run --dataSource src/ormconfig.ts
+- para rodar o backend -> npm run dev
 
 # Detalhes do sistema
 - Realizar cadastro no sistema
 - Realizar login no sistema
 - Visualizar informações cadastradas
--=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=
 - Rota de listagem não permite acesso caso não possua cadastro
 - Ao digitar o cep no input e clicar fora uma função
     preenche os outros campos do form de endereço
