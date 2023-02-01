@@ -17,9 +17,12 @@ class LoginController {
         );
         return response.json({data: token.toString()});
       }
+      else{
+        return response.status(400).json({"message": "Senha incorreta."})
+      }
     }
     else{
-      return response.status(400).json({"message": "User Not Found"})
+      return response.status(400).json({"message": "Usuário não encontrado."})
     }
   }
 }
