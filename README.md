@@ -40,3 +40,5 @@
 - Rota de listagem não permite acesso caso não possua cadastro
 - Ao digitar o cep no input e clicar fora uma função
     preenche os outros campos do form de endereço
+# Env
+- O modelo do arquivo .env está dentro da pasta da api, basta adicionar suas informações la.
