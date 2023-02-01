@@ -8,6 +8,7 @@ class LoginController {
     const repository = connectionSource.getRepository(UserModel);
     const email = request.body["email"];
     const existent_user = await repository.findOne({ where: { email } });
+
     if (existent_user) {
       if (existent_user["password"] == request.body["password"]) {
         const token = jwt.sign(
@@ -18,7 +19,7 @@ class LoginController {
       }
     }
     else{
-      return response.status(400).send("User Not Found")
+      return response.status(400).json({"message": "User Not Found"})
     }
   }
 }

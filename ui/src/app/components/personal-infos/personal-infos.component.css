@@ -10,8 +10,7 @@
     background-color: #0fa983;
 }
 .infos{
-
-    padding: 20px;
+    padding: 20px !important;
     width:60%;
     height:60%;
     border-radius: 50px;
@@ -23,6 +22,8 @@
     grid-template-rows: 50px 50px 50px 50px;
     justify-content: center;
     grid-column-gap: 10%;
+    grid-row-gap: 5%;
+    box-sizing: content-box;
 
 }
 .grid-item{
@@ -31,4 +32,15 @@
     color: #000;
     font-size: 20px;
     font-weight: 600;
+}
+@media (max-width: 768px){
+    .infos{
+        grid-template-columns: auto;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
+    }
+}
+@media (max-width: 425px){
+    .infos{
+
+    }
 }
